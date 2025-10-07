@@ -10,7 +10,7 @@ env:
   GKE_CLUSTER: primary-gke-cluster
   GKE_ZONE: us-central1-f
   GAR_LOCATION: us-central1 # Localização do Artifact Registry (geralmente a região)
-  IMAGE_NAME: python-myapp
+  IMAGE_NAME: python-app
 
 jobs:
   build-and-deploy:
