@@ -27,7 +27,7 @@ resource "google_compute_subnetwork" "gke_subnet" {
   private_ip_google_access = true # <-- ADIÇÃO IMPORTANTE
 }
 
-###### Criando o Cloud NAT para acesso à internet ######
+####### Criando o Cloud NAT para acesso à internet #######
 resource "google_compute_router" "router" {
   name    = "gke-nat-router"
   network = google_compute_network.vpc_network.id
@@ -50,7 +50,7 @@ resource "google_compute_router_nat" "nat" {
   }
 }
 
-###### Criando o Artifact Registry #######
+####### Criando o Artifact Registry #######
 resource "google_artifact_registry_repository" "my_repo" {
   provider      = google
   location      = "us-central1"
