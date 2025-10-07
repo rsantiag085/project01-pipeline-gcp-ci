@@ -6,10 +6,10 @@ on:
       - main
 
 env:
-  GCP_PROJECT: 	prime-bridge-455802-f4 # <-- SUBSTITUA PELO ID DO SEU PROJETO
+  GCP_PROJECT: 	prime-bridge-455802-f4 
   GKE_CLUSTER: primary-gke-cluster
   GKE_ZONE: us-central1-f
-  GAR_LOCATION: us-central1 # Localização do Artifact Registry (geralmente a região)
+  GAR_LOCATION: us-central1 
   IMAGE_NAME: python-app
 
 jobs:
