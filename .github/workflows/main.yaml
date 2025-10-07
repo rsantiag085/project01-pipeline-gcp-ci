@@ -25,13 +25,18 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
       
-      - name: Install gke-gcloud-auth-plugin
+      - name: Adicione o repositório do Google Cloud
         run: echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+      
+      - name: Adicione a chave do repositório
         run: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+        
+      - name: Update do sistema  
         run: sudo apt update
+      
+      - name: Install gke-gcloud-auth-plugin
         run: sudo apt install google-cloud-cli -y
-        run: gcloud init
-
+        
       - name: Configure Docker for GAR
         run: gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev
 
