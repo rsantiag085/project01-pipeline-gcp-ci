@@ -32,4 +32,5 @@ jobs:
           
           sed -i 's|ARTIFACT_REGISTRY_URL/python-app:latest|${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.IMAGE_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}|g' k8s/deployment.yaml
           
-          kubectl apply -f k8s/
+          kubectl apply -f k8s/deployment.yaml
+          
