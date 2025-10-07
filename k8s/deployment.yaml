@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: python-myapp
-        image: ARTIFACT_REGISTRY_URL/my-python-app:latest
+        image: ARTIFACT_REGISTRY_URL/python-myapp:latest
         ports:
         - containersPort: 8080
