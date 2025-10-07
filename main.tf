@@ -50,6 +50,15 @@ resource "google_compute_router_nat" "nat" {
   }
 }
 
+###### Criando o Artifact Registry ######
+resource "google_artifact_registry_repository" "my_repo" {
+  provider      = google
+  location      = "us-central1"
+  repository_id = "python-app" # <-- Este é o nome que o pipeline está esperando
+  description   = "Repositório Docker para a aplicação python-app"
+  format        = "DOCKER"
+}
+
 ###### Criando o cluster GKE PRIVADO ######
 resource "google_container_cluster" "primary_cluster" {
   name     = "primary-gke-cluster"
