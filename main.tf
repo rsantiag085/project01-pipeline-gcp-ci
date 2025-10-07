@@ -50,7 +50,7 @@ resource "google_compute_router_nat" "nat" {
   }
 }
 
-###### Criando o Artifact Registry ######
+###### Criando o Artifact Registry #######
 resource "google_artifact_registry_repository" "my_repo" {
   provider      = google
   location      = "us-central1"
